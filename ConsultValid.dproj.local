@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/05/23 15:06:06.000.933,=rtl.dcp</Transaction>
+    <Transaction>2023/05/23 15:06:17.000.342,C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\ConsultiValid.dproj=C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\Package1.dproj</Transaction>
+    <Transaction>2023/05/23 15:07:52.000.741,=D:\Dropbox\Componentes\DTConsultValid\DTConsultValid.pas</Transaction>
+    <Transaction>2023/05/23 15:07:58.000.863,C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\ConsultValid.dproj=C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\ConsultiValid.dproj</Transaction>
+    <Transaction>2023/05/23 15:08:08.000.025,D:\Dropbox\Componentes\DTConsultValid\ConsultValid.dproj=C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\ConsultValid.dproj</Transaction>
+    <Transaction>2023/05/24 08:16:25.000.644,=D:\Dropbox\Componentes\DTConsultValid\Unit1.pas</Transaction>
+    <Transaction>2023/05/24 08:16:51.000.559,D:\Dropbox\Componentes\DTConsultValid\UCorrecaoConsult.pas=D:\Dropbox\Componentes\DTConsultValid\Unit1.pas</Transaction>
+    <Transaction>2023/05/24 08:17:21.000.387,=RESTComponents.dcp</Transaction>
+    <Transaction>2023/05/24 08:33:31.000.773,D:\Dropbox\Componentes\DTConsultValid\UCorrecaoConsult.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

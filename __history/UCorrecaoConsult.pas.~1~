@@ -1,0 +1,302 @@
+unit UCorrecaoConsult;
+
+//  *************************************************
+//    SoftwareHouse    : DTJsonToClass - 10
+//    Gerado em        : 24-05-2023 08:15:30
+//    Desenvolvido por : Tiago Passarella
+//  *************************************************
+
+interface
+
+uses Generics.Collections, Rest.Json;
+
+type
+
+TOP_INTESTADUALClass = class
+private
+  FCFOP_EE    : String;
+  FCFOP_SE    : String;
+public
+  property CFOP_EE     : String       read FCFOP_EE     write FCFOP_EE    ;
+  property CFOP_SE     : String       read FCFOP_SE     write FCFOP_SE    ;
+  function ToJsonString: string;
+  class function FromJsonString(AJsonString: string): TOP_INTESTADUALClass;
+end;
+
+TOP_INTERNOClass = class
+private
+  FCFOP_EI    : String;
+  FCFOP_SI    : String;
+public
+  property CFOP_EI     : String       read FCFOP_EI     write FCFOP_EI    ;
+  property CFOP_SI     : String       read FCFOP_SI     write FCFOP_SI    ;
+  function ToJsonString: string;
+  class function FromJsonString(AJsonString: string): TOP_INTERNOClass;
+end;
+
+TCFOPClass = class
+private
+  FOP_INTERNO    : TArray<TOP_INTERNOClass>;
+  FOP_INTESTADUAL: TArray<TOP_INTESTADUALClass>;
+public
+  property OP_INTERNO     : TArray<TOP_INTERNOClass> read FOP_INTERNO     write FOP_INTERNO    ;
+  property OP_INTESTADUAL : TArray<TOP_INTESTADUALClass> read FOP_INTESTADUAL write FOP_INTESTADUAL;
+  destructor Destroy; override;
+  function ToJsonString: string;
+  class function FromJsonString(AJsonString: string): TCFOPClass;
+end;
+
+TPRODUTOClass = class
+private
+  FALIQREDICMS    : String;
+  FALIQ_COFINS    : String;
+  FALIQ_DESICMS   : String;
+  FALIQ_PIS       : String;
+  FAliq_ICMS      : String;
+  FAliq_IPI       : String;
+  FCFOP           : TArray<TCFOPClass>;
+  FCOD_BARRAS     : String;
+  FCOD_BENEF      : String;
+  FCOD_CEST       : String;
+  FCOD_INTERNO    : String;
+  FCOD_NCM        : String;
+  FCSTCOF_E       : String;
+  FCSTCOF_S       : String;
+  FCSTPIS_E       : String;
+  FCSTPIS_S       : String;
+  FCST_CSOSN_S    : String;
+  FCST_ICMS_E     : String;
+  FCST_ICMS_S     : String;
+  FCST_IPI        : String;
+  FDESCRICAO      : String;
+  FENQ_IPI        : String;
+  FFEM_ICMS       : String;
+  FLISTA          : String;
+  FMOD_BC         : String;
+  FMOT_DES        : String;
+  FMVA            : String;
+  FNATRECEITA     : String;
+  FPMvast         : String;
+  FTIP_MED        : String;
+  FTP_ALIQICMS    : String;
+  FPICMSST        : String;
+  FPRED_ALIQICMS  : String;
+public
+  property ALIQREDICMS     : String           read FALIQREDICMS     write FALIQREDICMS    ;
+  property ALIQ_COFINS     : String           read FALIQ_COFINS     write FALIQ_COFINS    ;
+  property ALIQ_DESICMS    : String           read FALIQ_DESICMS    write FALIQ_DESICMS   ;
+  property ALIQ_PIS        : String           read FALIQ_PIS        write FALIQ_PIS       ;
+  property Aliq_ICMS       : String           read FAliq_ICMS       write FAliq_ICMS      ;
+  property Aliq_IPI        : String           read FAliq_IPI        write FAliq_IPI       ;
+  property CFOP            : TArray<TCFOPClass> read FCFOP            write FCFOP           ;
+  property COD_BARRAS      : String           read FCOD_BARRAS      write FCOD_BARRAS     ;
+  property COD_BENEF       : String           read FCOD_BENEF       write FCOD_BENEF      ;
+  property COD_CEST        : String           read FCOD_CEST        write FCOD_CEST       ;
+  property COD_INTERNO     : String           read FCOD_INTERNO     write FCOD_INTERNO    ;
+  property COD_NCM         : String           read FCOD_NCM         write FCOD_NCM        ;
+  property CSTCOF_E        : String           read FCSTCOF_E        write FCSTCOF_E       ;
+  property CSTCOF_S        : String           read FCSTCOF_S        write FCSTCOF_S       ;
+  property CSTPIS_E        : String           read FCSTPIS_E        write FCSTPIS_E       ;
+  property CSTPIS_S        : String           read FCSTPIS_S        write FCSTPIS_S       ;
+  property CST_CSOSN_S     : String           read FCST_CSOSN_S     write FCST_CSOSN_S    ;
+  property CST_ICMS_E      : String           read FCST_ICMS_E      write FCST_ICMS_E     ;
+  property CST_ICMS_S      : String           read FCST_ICMS_S      write FCST_ICMS_S     ;
+  property CST_IPI         : String           read FCST_IPI         write FCST_IPI        ;
+  property DESCRICAO       : String           read FDESCRICAO       write FDESCRICAO      ;
+  property ENQ_IPI         : String           read FENQ_IPI         write FENQ_IPI        ;
+  property FEM_ICMS        : String           read FFEM_ICMS        write FFEM_ICMS       ;
+  property LISTA           : String           read FLISTA           write FLISTA          ;
+  property MOD_BC          : String           read FMOD_BC          write FMOD_BC         ;
+  property MOT_DES         : String           read FMOT_DES         write FMOT_DES        ;
+  property MVA             : String           read FMVA             write FMVA            ;
+  property NATRECEITA      : String           read FNATRECEITA      write FNATRECEITA     ;
+  property PMvast          : String           read FPMvast          write FPMvast         ;
+  property TIP_MED         : String           read FTIP_MED         write FTIP_MED        ;
+  property TP_ALIQICMS     : String           read FTP_ALIQICMS     write FTP_ALIQICMS    ;
+  property pICMSST         : String           read FPICMSST         write FPICMSST        ;
+  property pRED_ALIQICMS   : String           read FPRED_ALIQICMS   write FPRED_ALIQICMS  ;
+  destructor Destroy; override;
+  function ToJsonString: string;
+  class function FromJsonString(AJsonString: string): TPRODUTOClass;
+end;
+
+TRESUMOClass = class
+private
+  FAJUSTADO          : String;
+  FANALISECLIENTE    : String;
+  FANALISECONSULT    : String;
+  FCERTOS            : String;
+  FTOTAL             : String;
+public
+  property AJUSTADO           : String              read FAJUSTADO           write FAJUSTADO          ;
+  property ANALISECLIENTE     : String              read FANALISECLIENTE     write FANALISECLIENTE    ;
+  property ANALISECONSULT     : String              read FANALISECONSULT     write FANALISECONSULT    ;
+  property CERTOS             : String              read FCERTOS             write FCERTOS            ;
+  property TOTAL              : String              read FTOTAL              write FTOTAL             ;
+  function ToJsonString: string;
+  class function FromJsonString(AJsonString: string): TRESUMOClass;
+end;
+
+TCABECALHOClass = class
+private
+  FCNPJ    : String;
+  FDT_TRANS: TDate;
+  FHR_TRANS: String;
+  FTP_ARQ  : String;
+public
+  property CNPJ     : String    read FCNPJ     write FCNPJ    ;
+  property DT_TRANS : TDate     read FDT_TRANS write FDT_TRANS;
+  property HR_TRANS : String    read FHR_TRANS write FHR_TRANS;
+  property TP_ARQ   : String    read FTP_ARQ   write FTP_ARQ  ;
+  function ToJsonString: string;
+  class function FromJsonString(AJsonString: string): TCABECALHOClass;
+end;
+
+TCorrecaoConsultClass = class
+private
+  FCABECALHO    : TArray<TCABECALHOClass>;
+  FPRODUTO      : TArray<TPRODUTOClass>;
+  FRESUMO       : TArray<TRESUMOClass>;
+public
+  property CABECALHO     : TArray<TCABECALHOClass> read FCABECALHO     write FCABECALHO    ;
+  property PRODUTO       : TArray<TPRODUTOClass> read FPRODUTO       write FPRODUTO      ;
+  property RESUMO        : TArray<TRESUMOClass> read FRESUMO        write FRESUMO       ;
+  destructor Destroy; override;
+  function ToJsonString: string;
+  class function FromJsonString(AJsonString: string): TCorrecaoConsultClass;
+end;
+
+implementation
+
+{TOP_INTESTADUALClass}
+
+
+function TOP_INTESTADUALClass.ToJsonString: string;
+begin
+  result := TJson.ObjectToJsonString(self);
+end;
+
+class function TOP_INTESTADUALClass.FromJsonString(AJsonString: string): TOP_INTESTADUALClass;
+begin
+  result := TJson.JsonToObject<TOP_INTESTADUALClass>(AJsonString)
+end;
+
+{TOP_INTERNOClass}
+
+
+function TOP_INTERNOClass.ToJsonString: string;
+begin
+  result := TJson.ObjectToJsonString(self);
+end;
+
+class function TOP_INTERNOClass.FromJsonString(AJsonString: string): TOP_INTERNOClass;
+begin
+  result := TJson.JsonToObject<TOP_INTERNOClass>(AJsonString)
+end;
+
+{TCFOPClass}
+
+destructor TCFOPClass.Destroy;
+var
+  LOP_INTERNOItem: TOP_INTERNOClass;
+  LOP_INTESTADUALItem: TOP_INTESTADUALClass;
+begin
+
+ for LOP_INTERNOItem in FOP_INTERNO do
+   LOP_INTERNOItem.free;
+ for LOP_INTESTADUALItem in FOP_INTESTADUAL do
+   LOP_INTESTADUALItem.free;
+
+  inherited;
+end;
+
+function TCFOPClass.ToJsonString: string;
+begin
+  result := TJson.ObjectToJsonString(self);
+end;
+
+class function TCFOPClass.FromJsonString(AJsonString: string): TCFOPClass;
+begin
+  result := TJson.JsonToObject<TCFOPClass>(AJsonString)
+end;
+
+{TPRODUTOClass}
+
+destructor TPRODUTOClass.Destroy;
+var
+  LCFOPItem: TCFOPClass;
+begin
+
+ for LCFOPItem in FCFOP do
+   LCFOPItem.free;
+
+  inherited;
+end;
+
+function TPRODUTOClass.ToJsonString: string;
+begin
+  result := TJson.ObjectToJsonString(self);
+end;
+
+class function TPRODUTOClass.FromJsonString(AJsonString: string): TPRODUTOClass;
+begin
+  result := TJson.JsonToObject<TPRODUTOClass>(AJsonString)
+end;
+
+{TRESUMOClass}
+
+
+function TRESUMOClass.ToJsonString: string;
+begin
+  result := TJson.ObjectToJsonString(self);
+end;
+
+class function TRESUMOClass.FromJsonString(AJsonString: string): TRESUMOClass;
+begin
+  result := TJson.JsonToObject<TRESUMOClass>(AJsonString)
+end;
+
+{TCABECALHOClass}
+
+
+function TCABECALHOClass.ToJsonString: string;
+begin
+  result := TJson.ObjectToJsonString(self);
+end;
+
+class function TCABECALHOClass.FromJsonString(AJsonString: string): TCABECALHOClass;
+begin
+  result := TJson.JsonToObject<TCABECALHOClass>(AJsonString)
+end;
+
+{TCorrecaoConsultClass}
+
+destructor TCorrecaoConsultClass.Destroy;
+var
+  LCABECALHOItem: TCABECALHOClass;
+  LRESUMOItem: TRESUMOClass;
+  LPRODUTOItem: TPRODUTOClass;
+begin
+
+ for LCABECALHOItem in FCABECALHO do
+   LCABECALHOItem.free;
+ for LRESUMOItem in FRESUMO do
+   LRESUMOItem.free;
+ for LPRODUTOItem in FPRODUTO do
+   LPRODUTOItem.free;
+
+  inherited;
+end;
+
+function TCorrecaoConsultClass.ToJsonString: string;
+begin
+  result := TJson.ObjectToJsonString(self);
+end;
+
+class function TCorrecaoConsultClass.FromJsonString(AJsonString: string): TCorrecaoConsultClass;
+begin
+  result := TJson.JsonToObject<TCorrecaoConsultClass>(AJsonString)
+end;
+
+end.
+

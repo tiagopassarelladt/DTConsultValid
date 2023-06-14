@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{8983C66B-3E89-48C7-98C0-0BB8C7D7379C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ConsultValid.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Demo\DemoConsultValid.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ConsultValid">
+        <MSBuild Projects="ConsultValid.dproj"/>
+    </Target>
+    <Target Name="ConsultValid:Clean">
+        <MSBuild Projects="ConsultValid.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ConsultValid:Make">
+        <MSBuild Projects="ConsultValid.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DemoConsultValid">
+        <MSBuild Projects="Demo\DemoConsultValid.dproj"/>
+    </Target>
+    <Target Name="DemoConsultValid:Clean">
+        <MSBuild Projects="Demo\DemoConsultValid.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DemoConsultValid:Make">
+        <MSBuild Projects="Demo\DemoConsultValid.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ConsultValid;DemoConsultValid"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ConsultValid:Clean;DemoConsultValid:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ConsultValid:Make;DemoConsultValid:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

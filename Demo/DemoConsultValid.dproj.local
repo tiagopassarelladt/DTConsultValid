@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/04/29 11:40:40.000.071,=C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\Unit8.pas</Transaction>
+    <Transaction>2023/05/23 15:30:50.000.567,=C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\Unit8.pas</Transaction>
+    <Transaction>2023/05/23 15:30:57.000.979,C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\Demo.dproj=C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\Project4.dproj</Transaction>
+    <Transaction>2023/05/23 15:30:57.000.997,C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\Project4.dproj=C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\Demo.dproj</Transaction>
+    <Transaction>2023/05/23 15:31:08.000.265,C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\Demo.dproj=C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\Project4.dproj</Transaction>
+    <Transaction>2023/05/23 15:31:08.000.288,C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\Project4.dproj=C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\Demo.dproj</Transaction>
+    <Transaction>2023/05/23 15:31:23.000.411,C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\DemoConsultValid.dproj=C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\Project4.dproj</Transaction>
+    <Transaction>2023/05/23 15:32:49.000.119,D:\Dropbox\Componentes\DTConsultValid\Demo\Unit8.pas=C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\Unit8.pas</Transaction>
+    <Transaction>2023/05/23 15:32:49.000.119,D:\Dropbox\Componentes\DTConsultValid\Demo\Unit8.dfm=C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\Unit8.dfm</Transaction>
+    <Transaction>2023/05/23 15:32:52.000.475,D:\Dropbox\Componentes\DTConsultValid\Demo\DemoConsultValid.dproj=C:\Users\Tiago Passarella\Documents\Embarcadero\Studio\Projects\DemoConsultValid.dproj</Transaction>
+    <Transaction>2023/05/24 08:16:06.000.790,=D:\Dropbox\Componentes\DTConsultValid\Demo\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

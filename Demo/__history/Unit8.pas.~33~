@@ -1,0 +1,109 @@
+unit Unit8;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, DTConsultValid;
+
+type
+  TForm8 = class(TForm)
+    edtUsuario: TEdit;
+    Label1: TLabel;
+    edtSenha: TEdit;
+    Label2: TLabel;
+    Button1: TButton;
+    DTConsultValid1: TDTConsultValid;
+    msg: TMemo;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    procedure ConfiguraComponente;
+  public
+    { Public declarations }
+  end;
+
+var
+  Form8: TForm8;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm8.Button1Click(Sender: TObject);
+begin
+     ConfiguraComponente;
+
+     msg.Lines.Clear;
+     msg.Lines.Add( DTConsultValid1.GetToken );
+end;
+
+procedure TForm8.Button2Click(Sender: TObject);
+var
+ListaProdutos : TStringList;
+  I: Integer;
+begin
+     ConfiguraComponente;
+
+     ListaProdutos := TStringList.Create;
+
+     ListaProdutos.Add('7894900039924' + '|' + 'fanta laranja' );
+
+     DTConsultValid1.ConsultaTributos( ListaProdutos );
+
+     msg.Lines.Clear;
+     for I := 0 to Pred( DTConsultValid1.RetAjustados.Count ) do
+     begin
+         msg.Lines.Add('ALIQREDICMS: '   + DTConsultValid1.RetAjustados[i].ALIQREDICMS );
+         msg.Lines.Add('ALIQ_COFINS: '   + DTConsultValid1.RetAjustados[i].ALIQ_COFINS );
+         msg.Lines.Add('ALIQ_DESICMS: '  + DTConsultValid1.RetAjustados[i].ALIQ_DESICMS );
+         msg.Lines.Add('ALIQ_PIS: '      + DTConsultValid1.RetAjustados[i].ALIQ_PIS );
+         msg.Lines.Add('Aliq_ICMS: '     + DTConsultValid1.RetAjustados[i].Aliq_ICMS );
+         msg.Lines.Add('Aliq_IPI: '      + DTConsultValid1.RetAjustados[i].Aliq_IPI );
+         msg.Lines.Add('CFOP: '          + DTConsultValid1.RetAjustados[i].CFOP );
+         msg.Lines.Add('COD_BARRAS: '    + DTConsultValid1.RetAjustados[i].COD_BARRAS );
+         msg.Lines.Add('COD_BENEF: '     + DTConsultValid1.RetAjustados[i].COD_BENEF );
+         msg.Lines.Add('COD_CEST: '      + DTConsultValid1.RetAjustados[i].COD_CEST );
+         msg.Lines.Add('COD_INTERNO: '   + DTConsultValid1.RetAjustados[i].COD_INTERNO );
+         msg.Lines.Add('COD_NCM: '       + DTConsultValid1.RetAjustados[i].COD_NCM );
+         msg.Lines.Add('CSTCOF_E: '      + DTConsultValid1.RetAjustados[i].CSTCOF_E );
+         msg.Lines.Add('CSTCOF_S: '      + DTConsultValid1.RetAjustados[i].CSTCOF_S );
+         msg.Lines.Add('CSTPIS_E: '      + DTConsultValid1.RetAjustados[i].CSTPIS_E );
+         msg.Lines.Add('CSTPIS_S: '      + DTConsultValid1.RetAjustados[i].CSTPIS_S );
+         msg.Lines.Add('CST_CSOSN_S: '   + DTConsultValid1.RetAjustados[i].CST_CSOSN_S );
+         msg.Lines.Add('CST_ICMS_E: '    + DTConsultValid1.RetAjustados[i].CST_ICMS_E );
+         msg.Lines.Add('CST_ICMS_S: '    + DTConsultValid1.RetAjustados[i].CST_ICMS_S );
+         msg.Lines.Add('CST_IPI: '       + DTConsultValid1.RetAjustados[i].CST_IPI );
+         msg.Lines.Add('DESCRICAO: '     + DTConsultValid1.RetAjustados[i].DESCRICAO );
+         msg.Lines.Add('ENQ_IPI: '       + DTConsultValid1.RetAjustados[i].ENQ_IPI );
+         msg.Lines.Add('FEM_ICMS: '      + DTConsultValid1.RetAjustados[i].FEM_ICMS );
+         msg.Lines.Add('LISTA: '         + DTConsultValid1.RetAjustados[i].LISTA );
+         msg.Lines.Add('MOD_BC: '        + DTConsultValid1.RetAjustados[i].MOD_BC );
+         msg.Lines.Add('MOT_DES: '       + DTConsultValid1.RetAjustados[i].MOT_DES );
+         msg.Lines.Add('MVA: '           + DTConsultValid1.RetAjustados[i].MVA );
+         msg.Lines.Add('NATRECEITA: '    + DTConsultValid1.RetAjustados[i].NATRECEITA );
+         msg.Lines.Add('PMvast: '        + DTConsultValid1.RetAjustados[i].PMvast );
+         msg.Lines.Add('TIP_MED: '       + DTConsultValid1.RetAjustados[i].TIP_MED );
+         msg.Lines.Add('TP_ALIQICMS: '   + DTConsultValid1.RetAjustados[i].TP_ALIQICMS );
+         msg.Lines.Add('pICMSST: '       + DTConsultValid1.RetAjustados[i].pICMSST );
+         msg.Lines.Add('pRED_ALIQICMS: ' + DTConsultValid1.RetAjustados[i].pRED_ALIQICMS );
+
+     end;
+
+     FreeAndNil( ListaProdutos );
+end;
+
+procedure TForm8.ConfiguraComponente;
+begin
+      DTConsultValid1.CNPJ     := '11914502000144';
+      DTConsultValid1.UF       := 'MG';
+      DTConsultValid1.Login    := edtUsuario.Text;
+      DTConsultValid1.Senha    := edtSenha.Text;
+      DTConsultValid1.Ambiente := tpvHomologacao;
+      DTConsultValid1.CodFaixa := '101';
+      DTConsultValid1.GravaLog := True;
+      DTConsultValid1.CaminhoLog := 'c:\temp';
+end;
+
+end.
